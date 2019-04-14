@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="format-detection" content="telephone=no, email=no, address=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+
+    <title>vue-brush demo</title>
+
+    <script type="application/javascript" src="//unpkg.com/vue/dist/vue.min.js"></script>
+
+    <script type="application/javascript" src="//unpkg.com/vue-brush/dist/vue-brush.min.js"></script>
+    <link rel="stylesheet" media="all" href="//unpkg.com/vue-brush/dist/vue-brush.min.css" />
+  </head>
+  <body>
+    <h2>vue-brush demo</h2>
+    <div id="app">
+      <p></p>“Mona Lisa” with aspect ratio 1:1</p>
+      <p style="width: 100px;">
+        <brush source="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg/402px-Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg" />
+      </p>
+      <p></p>“Mona Lisa” with aspect ratio 1:1 (cropped)</p>
+      <p style="width: 100px;">
+        <brush source="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg/402px-Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg" cropped />
+      </p>
+      <p></p>“Mona Lisa” with aspect ratio 16:9</p>
+      <p style="width: 200px;">
+        <brush source="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg/515px-Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg" :ratio="16 / 9" />
+      </p>
+      <p></p>“Mona Lisa” with aspect ratio 9:16</p>
+      <p style="width: 200px;">
+        <brush source="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg/687px-Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg" :ratio="9 / 16" />
+      </p>
+      <p>
+        <small>&copy; Leonardo da Vinci.</small>
+      </p>
+    </div>
+
+    <script type="application/javascript">
+      window.document.addEventListener('DOMContentLoaded', function () {
+        Vue.use(vueBrush);
+
+        new Vue({
+          el: '#app'
+        });
+      }, false)
+    </script>
+  </body>
+</html>
