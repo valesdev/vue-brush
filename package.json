@@ -1,6 +1,6 @@
 {
   "name": "vue-brush",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Gracefully load images, integrated with Vue.js.",
   "main": "dist/vue-brush.min.js",
   "scripts": {

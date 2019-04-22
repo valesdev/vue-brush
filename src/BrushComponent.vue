@@ -151,7 +151,7 @@ export default {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain;
-    z-index: 1;
+    z-index: 0;
     opacity: 0;
     &.cropped {
       background-size: cover;
