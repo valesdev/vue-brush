@@ -5,7 +5,7 @@
     @click="$emit('click', $event)"
   >
 
-    <svg class="brush-holder" :width="holderWidth" :height="holderHeight" xmlns="http://www.w3.org/2000/svg">
+    <svg class="brush-holder" :width="`${holderWidth}px`" :height="`${holderHeight}px`" :viewBox="`0 0 ${holderWidth} ${holderHeight}`" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
       <rect fill="#FFFFFF" fill-opacity="0" x="0" y="0" :width="holderWidth" :height="holderHeight" />
     </svg>
 
@@ -124,7 +124,7 @@ export default {
   .brush-holder {
     display: block;
     width: 100%;
-    height: auto;
+    height: 100%;
   }
   .brush-background,
   .brush-loading,
