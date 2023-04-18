@@ -1,8 +1,8 @@
 import BrushComponent from './BrushComponent.vue'
 
 const vueBrush = {
-  install (Vue, options = {}) {
-    Vue.component(BrushComponent.name, BrushComponent)
+  install (app) {
+    app.component(BrushComponent.name, BrushComponent)
   }
 }
 

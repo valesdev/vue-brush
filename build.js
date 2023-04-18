@@ -14,11 +14,12 @@ const banner =
 
 rollup.rollup({
   input: 'src/index.js',
+  external: /^(vue)$/,
   plugins: [
-    vue({ css: false }),
+    vue(),
     postcss({ minimize: true, extract: true }),
     buble(),
-    terser({ output: { comments: /^!/ } }),
+    terser(),
     commonjs()
   ]
 })
@@ -27,6 +28,7 @@ rollup.rollup({
       format: 'umd',
       name: 'vueBrush',
       file: `dist/${pkg.name}.min.js`,
+      globals: { vue: 'Vue' },
       banner
     })
   })

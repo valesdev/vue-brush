@@ -8,30 +8,39 @@
 
     <title>vue-brush demo</title>
 
-    <script type="application/javascript" src="//unpkg.com/vue/dist/vue.min.js"></script>
+    <script type="application/javascript" src="//unpkg.com/vue@3/dist/vue.global.prod.js"></script>
 
-    <script type="application/javascript" src="//unpkg.com/vue-brush/dist/vue-brush.min.js"></script>
-    <link rel="stylesheet" media="all" href="//unpkg.com/vue-brush/dist/vue-brush.min.css" />
+    <script type="application/javascript" src="//unpkg.com/vue-brush@2/dist/vue-brush.min.js"></script>
+    <link rel="stylesheet" media="all" href="//unpkg.com/vue-brush@2/dist/vue-brush.min.css" />
   </head>
   <body>
     <h2>vue-brush demo</h2>
+
     <div id="app">
-      <p></p>“Mona Lisa” with aspect ratio 1:1</p>
+      <p>“Mona Lisa” with aspect ratio 1:1</p>
+
       <p style="width: 100px;">
-        <brush source="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg/402px-Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg" />
+        <Brush source="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg/402px-Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg" />
       </p>
-      <p></p>“Mona Lisa” with aspect ratio 1:1 (cropped)</p>
+
+      <p>“Mona Lisa” with aspect ratio 1:1 (cropped)</p>
+
       <p style="width: 100px;">
-        <brush source="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg/402px-Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg" cropped />
+        <Brush source="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg/402px-Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg" cropped />
       </p>
-      <p></p>“Mona Lisa” with aspect ratio 16:9</p>
+
+      <p>“Mona Lisa” with aspect ratio 16:9</p>
+
       <p style="width: 200px;">
-        <brush source="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg/515px-Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg" :ratio="16 / 9" />
+        <Brush source="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg/515px-Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg" :ratio="16 / 9" />
       </p>
-      <p></p>“Mona Lisa” with aspect ratio 9:16</p>
+
+      <p>“Mona Lisa” with aspect ratio 9:16</p>
+
       <p style="width: 200px;">
-        <brush source="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg/687px-Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg" :ratio="9 / 16" />
+        <Brush source="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg/687px-Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg" :ratio="9 / 16" />
       </p>
+
       <p>
         <small>&copy; Leonardo da Vinci.</small>
       </p>
@@ -39,11 +48,11 @@
 
     <script type="application/javascript">
       window.document.addEventListener('DOMContentLoaded', function () {
-        Vue.use(vueBrush);
+        const app = Vue.createApp();
 
-        new Vue({
-          el: '#app'
-        });
+        app.use(vueBrush);
+
+        app.mount('#app')
       }, false)
     </script>
   </body>
